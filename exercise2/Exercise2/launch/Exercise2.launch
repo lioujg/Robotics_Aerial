@@ -1,0 +1,6 @@
+<launch>
+
+	<node pkg="Exercise2" type="exercise2" name="exercise2" output="screen" required="true"></node> 
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find Exercise2)/config/rviz_config.rviz" />  
+
+</launch>
