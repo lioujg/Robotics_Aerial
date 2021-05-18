@@ -36,6 +36,8 @@ Deadline: 4/13
 用Kazam或其他可以錄螢幕畫面的軟體紀錄你的**動畫**, \
 ,**並將你的動畫影片連結附在你的Readme.md** \
 **或gif檔都可以** \
+在這喔
+https://drive.google.com/file/d/1w7BWbB_9USqRTy7yEQ8GIeX7zsN0OVRS/view?usp=sharing
 <img src="https://github.com/Robotics-Aerial-Robots/Homework6/blob/master/Figures/plot.PNG" width="80%" height="40%">
 
 
