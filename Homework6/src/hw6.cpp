@@ -9,7 +9,7 @@ using namespace std;
 /*The dynamic system can be represented as "M*y_doubledot + b*y_dot + k*y = u ";
 * Control canonical form:
 * [x1_dot] = [0       1][x1] + [0]u;
-* [x2_dot] = [-k/M -b/M][x2] + [1]u;
+* [x2_dot] = [-k/M -b/M][x2] + [1/M]u;
 * x1 = y;
 * x2 = y_dot;
 * y = [1 0][x1];
@@ -48,11 +48,16 @@ int main(int argc, char **argv)
 		 *
 		 *Please implement your codes here.
 		 */
+		x1.current = x1.last + x2.last * dt;
+		x2.current = x2.last + ((-k * x1.last - b * x2.last) / M + (1 / M) * u) * dt;
+
+		x1.last = x1.current;
+		x2.last = x2.current;
 
 		/*Current moment is last moment in the future*/
 		past = now;
 		/*You can check the position data by PlotJuggler*/
-		position.data = x1.current; 
+		position.data = x1.current;
 		state_pub.publish(position);
 		ros::spinOnce();
 		loop_rate.sleep();
