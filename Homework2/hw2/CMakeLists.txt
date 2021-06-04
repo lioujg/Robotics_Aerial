@@ -211,6 +211,3 @@ target_link_libraries(hw2 ${catkin_LIBRARIES})
 add_executable(hw2_solution src/hw2_solution.cpp)
 target_link_libraries(hw2_solution ${catkin_LIBRARIES})
 
-add_executable(rostu src/rostu.cpp)
-target_link_libraries(rostu ${catkin_LIBRARIES})
-

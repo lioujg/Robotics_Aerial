@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   cv_bridge
 )
 
-find_package(Ceres REQUIRED)
+#find_package(Ceres REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 catkin_package(
