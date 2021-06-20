@@ -45,6 +45,12 @@ void KalmanFilter::update(const Eigen::VectorXd& y) {
 //Please refer the page 20 in week_12 kf ptt.
 //x_hat_new is prediction(x_k)
 //x_hat is correction(x_k-1)
+  x_hat_new = A * x_hat + B * 2;
+  P = A*P*A.transpose() + Q;
+  K = P*C.transpose()*(C*P*C.transpose() + R).inverse();
+  x_hat_new += K * (y - C * x_hat_new);
+  P = (I - K * C)*P;
+  x_hat = x_hat_new;
 
 //
   t += dt;

@@ -27,8 +27,23 @@ int main(int argc, char **argv)
 
   // Please set parameter in this part and use the dynamic model parameter.
   // Discrete LTI projectile motion, measuring position only
+  A << 1, dt,  0,
+       0,  1, dt,
+       0,  0,  1;
 
-  //
+  B << 0,  0,  1;
+
+  C << 1,  0,  0;
+
+  P << 1,  0,  0,
+       0,  1,  0,
+       0,  0,  1;
+
+  Q << 400,    0,    0,
+         0, 0.01,    0,
+         0,    0, 0.01;
+
+  R << 1;
 
   std::cout << "A: \n" << A << std::endl;
   std::cout << "C: \n" << C << std::endl;
@@ -68,7 +83,7 @@ int main(int argc, char **argv)
 
   std::ofstream in;
   //chage your path "home/ee405423/Desktop"
-  in.open("/home/ee405423/Desktop/data.csv",std::ios::out | std::ios::app);
+  in.open("/home/liu/Robotics-Aerial-Robots-HW-ws/src/Robotics_Aerial/Homework11/hw11/src/data.csv",std::ios::out | std::ios::app);
   int len = answer.size();
   for(int i =0; i<len;i++)
   {
